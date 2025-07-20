@@ -58,10 +58,7 @@ public List<Producto> findByPrecioBetweenOrderByDescripcion(double precioInf, do
     
      @Override
     @Transactional(readOnly=true)    
-    public List<Producto> metodoNativo(double precioInf, double precioSup) {
-        return productoDao.metodoNativo(precioInf, precioSup);
+    public List<Producto> metodoNativo(int existenciasInf, int existenciasSup) {
+        return productoDao.metodoNativo(existenciasInf, existenciasSup);
     }
-
 }
-
-

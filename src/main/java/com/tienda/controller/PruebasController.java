@@ -71,14 +71,15 @@ public class PruebasController {
         return "/pruebas/listado2";
     }
     
+    
     @PostMapping("/query3")
-    public String consultaQuery3(@RequestParam(value = "precioInf") double precioInf,
-            @RequestParam(value = "precioSup") double precioSup, Model model) {
-        var productos = productoService.metodoJPQL(precioInf, precioSup);
+    public String consultaQuery3(@RequestParam(value = "existenciasInf") int existenciasInf,
+            @RequestParam(value = "existenciasSup") int existenciasSup, Model model) {
+        var productos = productoService.metodoNativo(existenciasInf, existenciasSup);
         model.addAttribute("productos", productos);
         model.addAttribute("totalProductos", productos.size());
-        model.addAttribute("precioInf", precioInf);
-        model.addAttribute("precioSup", precioSup);
+        model.addAttribute("existenciasInf", existenciasInf);
+        model.addAttribute("existenciasSup", existenciasSup);
         return "/pruebas/listado2";
     }
     
