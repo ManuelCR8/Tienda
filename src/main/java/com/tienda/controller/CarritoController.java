@@ -20,7 +20,7 @@ public class CarritoController {
     
     @GetMapping("/")
     private String listado(Model model) {
-        var productos = productoService.getProductos(false);
+        var productos = productoService.getProductos(true);
         model.addAttribute("productos", productos);
         return "/index";
     }
